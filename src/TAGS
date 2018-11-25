@@ -1,0 +1,538 @@
+
+./12-case-study-AVL.lhs,1341
+main main31,32
+inv_proof inv_proof44,45
+node node48,49
+balR0, balRL, balRR balRR50,51
+balR0, balRL,balRL50,51
+balR0,balR050,51
+insR insR51,52
+merge merge52,53
+member member53,54
+data AVL AVL84,85
+    LeafLeaf85,86
+  | Node Node86,87
+  | Node { key key86,87
+         , l l87,88
+         , r r88,89
+         , ah ah89,90
+realHeight realHeight161,162
+nodeHeight nodeHeight166,167
+max max172,173
+isReal isReal181,182
+isBal isBal190,191
+empty empty228,229
+singleton singleton239,240
+mkNode mkNode257,258
+insert0 insert0290,291
+leftBig leftBig381,382
+rightBig rightBig384,385
+diff diff387,388
+getHeight getHeight394,395
+balFac balFac420,421
+leftHeavy leftHeavy428,429
+rightHeavy rightHeavy431,432
+noHeavy noHeavy434,435
+balL0 balL0462,463
+balLR balLR507,508
+balR0 balR0528,529
+balRR balRR542,543
+balRL balRL555,556
+insert insert566,567
+eqOrUp eqOrUp578,579
+insL insL592,593
+insR insR612,613
+bal bal643,644
+reBal reBal670,671
+balHt balHt673,674
+bigHt bigHt676,677
+insert' insert'689,690
+delete delete706,707
+eqOrDn eqOrDn713,714
+merge merge726,727
+getMin getMin740,741
+elems elems772,773
+member member790,791
+hasElem hasElem795,796
+insertAPI insertAPI807,808
+addElem addElem810,811
+deleteAPI deleteAPI823,824
+delElem delElem826,827
+
+./08-measure-sets.lhs,1491
+module Sets Sets10,11
+main main14,15
+die die18,19
+isUnique, isNotUnique isNotUnique20,21
+isUnique,isUnique20,21
+mergeSort mergeSort21,22
+range range22,23
+type List List31,32
+prop_one_plus_one_eq_two prop_one_plus_one_eq_two142,143
+implies implies149,150
+prop_x_y_200 prop_x_y_200167,168
+prop_intersection_comm prop_intersection_comm176,177
+prop_union_assoc prop_union_assoc184,185
+prop_intersection_dist prop_intersection_dist194,195
+prop_cup_dif_bad prop_cup_dif_bad206,207
+elts elts245,246
+append' append'322,323
+reverse' reverse'332,333
+revHelper revHelper334,335
+halve halve345,346
+prop_halve_append prop_halve_append351,352
+elem elem369,370
+test1 test1373,374
+test2 test2376,377
+insert insert396,397
+insertSort insertSort414,415
+merge merge425,426
+prop_merge_app prop_merge_app432,433
+mergeSort mergeSort454,455
+unique unique481,482
+isUnique isUnique496,497
+isNotUnique isNotUnique499,500
+filter filter511,512
+filter' filter'527,528
+test3 test3535,536
+test4 test4538,539
+reverse reverse550,551
+nub nub563,564
+isin isin582,583
+append append596,597
+range range613,614
+data Zipper Zipper634,635
+data Zipper a = Zipper Zipper634,635
+    focus focus635,636
+  , left left636,637
+  , right right637,638
+differentiate differentiate667,668
+integrate integrate680,681
+focusLeft focusLeft688,689
+focusRight focusRight699,700
+reverseZipper reverseZipper702,703
+filterZipper filterZipper712,713
+
+./06-measure-bool.lhs,701
+module Measures Measures18,19
+main main22,23
+die die31,32
+divide divide34,35
+size1, size2 size235,36
+size1,size135,36
+divide divide48,49
+avg2 avg260,61
+avg3 avg362,63
+size size70,71
+avgMany avgMany78,79
+notEmpty notEmpty113,114
+average average156,157
+average' average'168,169
+size1 size1187,188
+size2 size2191,192
+head head210,211
+tail tail214,215
+safeHead safeHead235,236
+null null241,242
+groupEq groupEq251,252
+eliminateStutter eliminateStutter269,270
+foldl1 foldl1283,284
+foldl foldl286,287
+sum sum298,299
+sumOk sumOk305,306
+sumBad sumBad307,308
+wtAverage wtAverage318,319
+map map326,327
+risers risers346,347
+safeSplit safeSplit356,357
+
+./05-datatypes.lhs,1431
+module RefinedDatatypesRefinedDatatypes10,11
+dotProd, dotProd' dotProd'47,48
+dotProd,dotProd47,48
+test1 test148,49
+test2 test249,50
+die die52,53
+data Sparse Sparse75,76
+data Sparse a = SP SP75,76
+data Sparse a = SP { spDim spDim75,76
+                   , spElems spElems76,77
+okSP okSP129,130
+badSP badSP137,138
+dotProd dotProd158,159
+dotProd' dotProd'175,176
+fromList fromList204,205
+test1 test1208,209
+plus plus219,220
+test2 test2223,224
+data IncList IncList240,241
+    EmpEmp241,242
+  | (:(242,243
+  | (:<) { hd hd242,243
+  | (:<) { hd :: a, tl tl242,243
+okList okList273,274
+badList badList275,276
+insertSort insertSort289,290
+insert insert300,301
+insertSort' insertSort'313,314
+split split325,326
+merge merge336,337
+mergeSort mergeSort349,350
+quickSort quickSort372,373
+append append383,384
+data BST BST394,395
+data BST a = LeafLeaf394,395
+           | Node Node395,396
+           | Node { root root395,396
+                  , left left396,397
+                  , right right397,398
+okBST okBST425,426
+badBST badBST469,470
+mem mem488,489
+one one500,501
+add add510,511
+data MinPair MinPair531,532
+data MinPair a = MP MP531,532
+data MinPair a = MP { mElt mElt531,532
+data MinPair a = MP { mElt :: a, rest rest531,532
+delMin delMin544,545
+del del560,561
+bstSort bstSort586,587
+toBST toBST589,590
+toIncList toIncList592,593
+
+./11-case-study-pointers.lhs,1217
+module Memory Memory12,13
+spanByte spanByte25,26
+unsafeHead unsafeHead26,27
+create, create' create'27,28
+create,create27,28
+chop' chop'65,66
+zero4 zero4192,193
+zero4' zero4'208,209
+zero3 zero3289,290
+exBad exBad346,347
+data ByteString ByteString430,431
+data ByteString = BS BS430,431
+    bPtr bPtr431,432
+  , bOff bOff432,433
+  , bLen bLen433,434
+good1 good1487,488
+good2 good2499,500
+bad1 bad1508,509
+bad2 bad2516,517
+create create546,547
+bsGHC bsGHC558,559
+pack pack580,581
+prop_pack_length prop_pack_length597,598
+packEx packEx618,619
+pLoop pLoop624,625
+unsafeTake unsafeTake640,641
+unsafeDrop unsafeDrop643,644
+unpack unpack654,655
+prop_unpack_length prop_unpack_length673,674
+chop chop690,691
+demo demo706,707
+prop_chop_length prop_chop_length718,719
+safeChop safeChop731,732
+queryAndChop queryAndChop738,739
+null null769,770
+unsafeHead unsafeHead779,780
+unsafeTail unsafeTail784,785
+group group792,793
+bsLen bsLen805,806
+spanByte spanByte818,819
+unsafeCreate unsafeCreate876,877
+cons cons885,886
+empty empty891,892
+malloc malloc897,898
+memcpy memcpy913,914
+nullForeignPtr nullForeignPtr917,918
+create' create'922,923
+
+./07-measure-int.lhs,1508
+module NumericMeasures NumericMeasures8,9
+die die14,15
+take, drop, take' take'15,16
+take, drop,drop15,16
+take,take15,16
+txgo txgo16,17
+quickSort quickSort17,18
+size size18,19
+flatten flatten19,20
+data Vector Vector54,55
+data Vector a = V V54,55
+data Vector a = V { vDim vDim54,55
+                  , vElts vElts55,56
+data Matrix Matrix59,60
+data Matrix a = M M59,60
+data Matrix a = M { mRow mRow59,60
+                  , mCol mCol60,61
+                  , mElts mElts61,62
+dotProd dotProd69,70
+matProd matProd82,83
+size size134,135
+notEmpty notEmpty156,157
+type List List193,194
+map map226,227
+prop_map prop_map230,231
+reverse reverse245,246
+zipWith zipWith263,264
+zip zip275,276
+zipOrNull zipOrNull302,303
+test1 test1308,309
+test2 test2311,312
+test3 test3314,315
+take' take'329,330
+drop drop348,349
+test4 test4353,354
+take take364,365
+test5 test5369,370
+partition partition378,379
+quickSort quickSort420,421
+test10 test10424,425
+okVec okVec451,452
+badVec badVec453,454
+vEmp vEmp476,477
+vCons vCons479,480
+vHd vHd488,489
+vTl vTl492,493
+for for500,501
+vBin vBin514,515
+dotProduct dotProduct522,523
+vecFromList vecFromList531,532
+test6 test6534,535
+flatten flatten550,551
+product product562,563
+ok23 ok23609,610
+bad1 bad1620,621
+bad2 bad2624,625
+matFromList matFromList635,636
+mat23 mat23654,655
+matProduct matProduct675,676
+ok32 ok32690,691
+transpose transpose704,705
+txgo txgo710,711
+
+./02-logic.hs,986
+module Logic Logic3,4
+main main4,5
+ax1 ax110,11
+ax2 ax211,12
+ax3 ax312,13
+ax4 ax413,14
+ax5 ax514,15
+ax6 ax615,16
+congruence congruence17,18
+fx1 fx118,19
+ex1, ex2 ex220,21
+ex1,ex120,21
+ex3, ex3', ex4, ex6, ex7, exDeMorgan1, exDeMorgan2 exDeMorgan221,22
+ex3, ex3', ex4, ex6, ex7, exDeMorgan1,exDeMorgan121,22
+ex3, ex3', ex4, ex6, ex7,ex721,22
+ex3, ex3', ex4, ex6,ex621,22
+ex3, ex3', ex4,ex421,22
+ex3, ex3',ex3'21,22
+ex3,ex321,22
+infixr infixr23,24
+False False27,28
+True True29,30
+False False33,34
+True True35,36
+ex0 ex041,42
+ex1 ex147,48
+ex2 ex250,51
+ex3 ex353,54
+ex4 ex456,57
+ex3' ex3'59,60
+ex6 ex662,63
+ex7 ex765,66
+exDeMorgan1 exDeMorgan168,69
+exDeMorgan2 exDeMorgan271,72
+ax0 ax074,75
+ax0' ax0'77,78
+ax1 ax180,81
+ax2 ax283,84
+ax3 ax386,87
+ax4 ax489,90
+ax5 ax592,93
+ax6 ax697,98
+congruence congruence102,103
+fx1 fx1105,106
+size size110,111
+fx0 fx0115,116
+fx2 fx2118,119
+fx2VC fx2VC123,124
+
+./09-case-study-lazy-queues.lhs,949
+module LazyQueue LazyQueue16,17
+die die25,26
+replicate replicate32,33
+data SList SList122,123
+data SList a = SL SL122,123
+data SList a = SL { size size122,123
+data SList a = SL { size :: Int, elems elems122,123
+realSize realSize135,136
+okList okList155,156
+badList badList157,158
+nil nil173,174
+cons cons176,177
+tl tl186,187
+hd hd190,191
+okHd okHd199,200
+badHd badHd201,202
+data Queue Queue217,218
+data Queue a = QQ217,218
+  { front front218,219
+  , back back219,220
+okQ okQ233,234
+badQ badQ235,236
+emp emp249,250
+remove remove258,259
+okRemove okRemove285,286
+badRemove badRemove286,287
+example2Q example2Q291,292
+example0Q example0Q294,295
+insert insert303,304
+replicate replicate313,314
+okReplicate okReplicate317,318
+badReplicate badReplicate320,321
+makeq makeq332,333
+rot rot350,351
+take take363,364
+okTake okTake371,372
+badTake badTake373,374
+exampleQ exampleQ375,376
+
+./03-basic.hs,510
+module Intro Intro3,4
+divide divide6,7
+zero'''' zero''''7,8
+die die8,9
+zero zero14,15
+one one17,18
+two two18,19
+three three19,20
+zero' zero'31,32
+zero'' zero''34,35
+zero''' zero'''37,38
+zero'''' zero''''40,41
+die die43,44
+cannotDie cannotDie45,46
+divide divide58,59
+avg2 avg261,62
+avg3 avg362,63
+avg avg65,66
+abs abs73,74
+calc calc80,81
+result result87,88
+isPositive isPositive91,92
+lAssert lAssert99,100
+yes yes102,103
+no no103,104
+truncate truncate107,108
+
+./todo/case-study-kmeans.lhs,1054
+module KMeans KMeans31,32
+instance Eq Eq (WrapType [Double] a)40,41
+   (=(==)41,42
+instance Ord Ord (WrapType [Double] a)43,44
+    compare compare44,45
+type List List65,66
+type NonEmptyList NonEmptyList69,70
+type Point Point73,74
+type Matrix Matrix77,78
+groupBy groupBy81,82
+partition partition82,83
+zipWith zipWith83,84
+transpose transpose84,85
+data WrapType WrapType103,104
+data WrapType b a = WrapType WrapType103,104
+data WrapType b a = WrapType {getVect getVect103,104
+data WrapType b a = WrapType {getVect :: b, getVal getVal103,104
+kmeans' kmeans'137,138
+max max158,159
+partition partition162,163
+refineCluster refineCluster185,186
+groupBy groupBy221,222
+exampleCluster exampleCluster240,241
+exampleCenter exampleCenter248,249
+clusterCenter clusterCenter259,260
+xs' xs'273,274
+safeDiv safeDiv285,286
+transpose transpose306,307
+nearestCenter nearestCenter323,324
+minKey minKey331,332
+distance distance339,340
+zipWith zipWith354,355
+kmeansGen kmeansGen380,381
+kmeans kmeans396,397
+
+./10-case-study-associative-maps.lhs,961
+module AssocativeMap AssocativeMap8,9
+die die14,15
+data Map Map18,19
+data Map k v = Node Node18,19
+data Map k v = Node { key key18,19
+                    , value value19,20
+                    , left left20,21
+                    , right right21,22
+             | TipTip22,23
+lemma_notMem lemma_notMem24,25
+set set25,26
+get get26,27
+get' get'27,28
+mem mem28,29
+emp emp29,30
+elems elems30,31
+fresh fresh31,32
+type Var Var168,169
+data Expr Expr170,171
+data Expr = Const Const170,171
+          | Var Var171,172
+          | Plus Plus172,173
+          | Let Let173,174
+val val183,184
+plus plus202,203
+eval eval227,228
+free free255,256
+topEval topEval294,295
+evalAny evalAny304,305
+tests tests315,316
+keys keys379,380
+emp emp398,399
+set set413,414
+get' get'431,432
+lemma_notMem lemma_notMem500,501
+get get520,521
+assert assert536,537
+mem mem564,565
+fresh fresh579,580
+elems elems588,589
+
+./04-poly.hs,607
+module VectorBoundsVectorBounds5,6
+absoluteSum' absoluteSum'20,21
+dotProduct dotProduct21,22
+absoluteSum absoluteSum22,23
+sparseProduct, sparseProduct' sparseProduct'23,24
+sparseProduct,sparseProduct23,24
+eeks eeks25,26
+twoLangs twoLangs32,33
+head' head'43,44
+head'' head''45,46
+unsafeLookup unsafeLookup51,52
+safeLookup safeLookup54,55
+vectorSum vectorSum62,63
+absoluteSum absoluteSum73,74
+loop loop86,87
+vectorSum' vectorSum'93,94
+absoluteSum' absoluteSum'102,103
+dotProduct dotProduct110,111
+sparseProduct sparseProduct118,119
+sparseProduct' sparseProduct'124,125
+
+./01-intro.lhs,76
+module Introduction Introduction5,6
+main main6,7
+average average23,24
