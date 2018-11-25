@@ -11,7 +11,7 @@ module VectorBounds
    , dotProduct
    , sparseProduct, sparseProduct'
    , eeks
-   , head, head', head''
+   , head', head''
    ) where
 
 import Prelude      hiding (head, abs, length)
@@ -23,19 +23,18 @@ dotProduct     :: Vector Int -> Vector Int -> Int
 absoluteSum     :: Vector Int -> Int
 sparseProduct, sparseProduct'  :: Vector Int -> [(Int, Int)] -> Int
 
-eeks      = [ok, yup, nono]
+eeks      = [ok, yup]
   where
     ok    = twoLangs ! 0
     yup   = twoLangs ! 1
-    nono  = twoLangs ! 3
 {-@ type VectorN a N = {v:Vector a | vlen v == N} @-}
 {-@ twoLangs :: VectorN String 2 @-}
 twoLangs     = fromList ["haskell", "javascript"]
 
 {-@ type Btwn Lo Hi = {v:Int | Lo <= v && v < Hi} @-}
 
-head     :: Vector a -> a
-head vec = vec ! 0
+-- head     :: Vector a -> a
+-- head vec = vec ! 0
 
 {-@ type NEVector a = {v:Vector a | 0 < vlen v} @-}
 
@@ -44,9 +43,10 @@ head' vec = vec ! 0
 
 head''     :: Vector a -> Maybe a
 head'' vec = case Data.Vector.null vec of
+               true -> Nothing
                false -> Just $ vec ! 0
 
-{-@ unsafeLookup :: Int -> Vector a -> a @-}
+{-@ unsafeLookup :: {i:Int | i >= 0} -> {v:Vector a | i < vlen v} -> a @-}
 unsafeLookup index vec = vec ! index
 
 {-@ safeLookup :: Vector a -> Int -> Maybe a @-}
@@ -69,10 +69,17 @@ vectorSum vec     = go 0 0
 -- >>> absoluteSum (fromList [1, -2, 3])
 -- 6
 {-@ absoluteSum :: Vector Int -> Nat @-}
-absoluteSum     = undefined
+absoluteSum xs = if length xs == 0 then 0 else go 0 0
+  where
+    {-@ go :: Nat -> {v:Int | 0 <= v && v <= sz} -> Nat @-}
+    go :: Int -> Int -> Int
+    go acc i
+          | i < sz = go (acc + (abs (xs ! i))) (i + 1)
+          | otherwise = acc
+    sz = length xs
+    abs n = if n >= 0 then n else (0-n)
 
 
-{-@ go :: Int -> {v:Int | 0 <= v && v <= sz} -> Int @-}
 
 
 loop :: Int -> Int -> a -> (Int -> a -> a) -> a
@@ -93,12 +100,13 @@ vectorSum' vec  = loop 0 n 0 body
 {-@ absoluteSum' :: Vector Int -> Nat @-}
 absoluteSum' vec = loop 0 n 0 body
   where
-    body i acc   = undefined
+    body i acc   = acc + (abs $ vec ! i)
     n            = length vec
+    abs n = if n >= 0 then n else (0-n)
 
 -- >>> dotProduct (fromList [1,2,3]) (fromList [4,5,6])
 -- 32
-{-@ dotProduct :: x:Vector Int -> y:Vector Int -> Int @-}
+{-@ dotProduct :: x:Vector Int -> {y:Vector Int | vlen y == vlen x} -> Int @-}
 dotProduct x y = loop 0 sz 0 body
   where
     body i acc = acc + (x ! i)  *  (y ! i)
